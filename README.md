@@ -116,7 +116,7 @@ Here are some miscellaneous sentences that exemplify the component in action:
 * o's 'ishe gadael 'biti deg, 'falle?
   *oes eisiau gadael ambeutu deg, efallai?*
   
-## Gosod
+## Installation
 1. Install the latest version of spaCy 2 (e.e. `pip install spacy==2.3.5`)
 2. Install the Welsh language pack that we have developed for spaCy, found here: https://github.com/techiaith/spacy-lang-cy
 3. Replace the `tokenizer_exceptions.py` file in the  `cy` ffolder that you've just placed in spaCy with the one with same name from this repository
