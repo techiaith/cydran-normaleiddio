@@ -92,5 +92,89 @@ Cydran gychwynnol yw hon, ac fe obeithiwn y bydd ei rhyddhau yn agor trafodaeth 
 # Normalisation Component
 This is an experimental normalisation component for the normalisation of Welsh-language texts.
 
-It is based on spaCy, and the requires that the software and the Welsh language package be installed for it to work.
+The normalisation compenent is based on spaCy, and the software and the Welsh language package will need to be installed for it to work.
+
+The component works by using spaCy tokenisation exceptions to provide a 'norm', or one consistent form, in situations where different forms are adopted, for example by changing each 'ydi' to 'ydy' so that spelling is consitant in the text for that word.
+
+This may include:
+* recognized orthographic variations e.g. normalisiation of **ydi** to **ydy**
+* verbal variations e.g. normalisiation of **isio**,**ishe** etc. to **eisiau**
+* deapostrophising e.g. Normalisiation of **cer'ed** to **cerdded**, **'rioed** to **erioed**, and **cynta'** to **cyntaf**
+
+Here are some miscellaneous sentences that exemplify the component in action:
+* poeni 'falla bod wbath arall wyt ti, 'lly?  
+  *poeni efallai bod rhywbeth arall wyt ti, felly?*
+
+* ydi 'cos ma' hi am raddio 'leni  
+  *ydi achos ma' hi am raddio eleni*
+
+* o's 'ishe gadael 'biti deg, 'falle?
+  *oes eisiau gadael ambeutu deg, efallai?*
+
+Here is the code for producing these examples using spaCy:
+
+```
+import spacy
+
+def retokenize_norms(doc):
+    retokenized_str = ""
+    for token in doc:
+        if " " in token.text_with_ws:
+            retokenized_str = retokenized_str + token.norm_ + " "
+        else:
+            retokenized_str = retokenized_str + token.norm_
+    return retokenized_str
+    
+nlp = spacy.blank("cy")
+
+texts = ["poeni 'falla bod wbath arall wyt ti, 'lly?",
+         "ydi 'cos ma' hi am raddio 'leni",
+         "o's 'ishe gadael 'biti deg, 'falle?"]
+            
+for text in texts:
+    doc = nlp(text)
+    normalized_text = retokenize_norms(doc)
+    
+    print (doc.text)
+    print (retokenize_norms(doc))
+    print ("------------------------------------------")
+```
+
+## Some Considerations
+### The problem of ambiguous wordforms
+
+The normalisation component is fairly straightforward and cannot distinguish context between wordforms that can mean more than one thing. There are many ambiguous words in spoken Welsh. Here are some examples:
+
+* 'da (gyda/rydym)
+* 'di (wedi, ydi)
+* 'na (yna, dyna)
+* 'ma (yma, dyma)
+* 'se (tasai/petasai)
+* sgen (does gen/oes gen)
+
+As the component only works on a single token basis, it is not possible to use the wider context of the wordform to apropriately normalise it.
+
+The best solution for ambiguous wordforms would be to annotate enough spoken texts that contain them, and then train a model that can distinguish between them, or tag them differently to aid disambiguation.
+
+Nevertheless, this is an important step towards that.
+
+### What should be normalised and what form should the norm take?
+We need further research to better understand what type of normalisation is appropriate for the Welsh language, and whether it is appropriate to include several different types of normalisation within the same component.
+
+Here are some examples of different types of normalisation:
+
+* Normalisiation of Dialect (mofyn/isio/eisiau), (fo/fe/ef/efe), (llaeth/llefrith)
+* Normalisiation of Register? (rydw/rwyf/yr ydwyf), (ti,chdi)
+* Normalisiation of Word Loss ([fy] 'nghath i)
+* Normalisiation of Terms (meicroffon/microffon), (firws,feirws)
+
+At present, the component contains a mixture of the above, but this may not coincide with all anticipated uses.
+
+### The creativity of the Welsh is limitless
+
+It is not possible to predict all possible verbal forms, so this component must be used appropriately and carefully, adding to it as necessary.
+
+## Conclusions
+
+This is an initial component, and we hope that its release will open a broader discussion on the use and expectations of normalisation components to inform future development.
 
