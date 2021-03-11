@@ -24,9 +24,14 @@ Dyma rai brawddegau amrywiol sy'n enghreifftio'r gydran ar waith:
 * o's 'ishe gadael 'biti deg, 'falle?
   *oes eisiau gadael ambeutu deg, efallai?*
 
+## Gosod
+1. Gosodwch y fersiwn ddiweddaru o spaCy 2 (e.e. `pip install spacy==2.3.5`)
+2. Gosodwch y pecyn iaith rydym wedi'i ddatblygu ar gyfer spaCy o https://github.com/techiaith/spacy-lang-cy
+3. Disodlwch y ffeil `tokenizer_exceptions.py` a geir yn y ffolder `cy` rydych chi newydd ei osod gyda'r un o'r enw yn y storfa hon
 
 
-Dyma'r cod ar gyfer cynhyrchu'r enghreifftiau hyn gan ddefnyddio spaCy:
+## Defnyddio
+Dyma'r cod ar gyfer cynhyrchu'r enghreifftiau uchod gan ddefnyddio spaCy:
 
 ```
 import spacy
@@ -83,7 +88,7 @@ Dyma rai enghreifftiau o fathau gwahnol o normaleiddio:
 
 Ar hyn o bryd, mae'r gydran yn cynnwys cymysgedd o'r uchod, ond efallai nad yw hynny'n cyd-fynd gyda phob defnydd a ragwelir.
 
-### Mae creadigrwydd y Cymry yn ddiderfyn
+### Mae cryn amrywiaeth o ran ffurfiau anffurfiol
 Does dim modd darogan pob ffurf lafar bosib, felly rhaid defnyddio'r gydran hon yn briodol ac yn ofalus, gan ychwanegu ati yn ôl yr angen. 
 
 ## Casgliadau
@@ -110,8 +115,14 @@ Here are some miscellaneous sentences that exemplify the component in action:
 
 * o's 'ishe gadael 'biti deg, 'falle?
   *oes eisiau gadael ambeutu deg, efallai?*
+  
+## Gosod
+1. Install the latest version of spaCy 2 (e.e. `pip install spacy==2.3.5`)
+2. Install the Welsh language pack that we have developed for spaCy, found here: https://github.com/techiaith/spacy-lang-cy
+3. Replace the `tokenizer_exceptions.py` file in the  `cy` ffolder that you've just placed in spaCy with the one with same name from this repository
 
-Here is the code for producing these examples using spaCy:
+## Usage
+Here is the code for producing the above examples using spaCy:
 
 ```
 import spacy
@@ -143,7 +154,7 @@ for text in texts:
 ## Some Considerations
 ### The problem of ambiguous wordforms
 
-The normalisation component is fairly straightforward and cannot distinguish context between wordforms that can mean more than one thing. There are many ambiguous words in spoken Welsh. Here are some examples:
+The normalisation component is fairly straightforward and cannot use context to distinguish between wordforms that may correspond to more than one thing. There are many ambiguous words in spoken Welsh. Here are some examples:
 
 * 'da (gyda/rydym)
 * 'di (wedi, ydi)
@@ -152,11 +163,9 @@ The normalisation component is fairly straightforward and cannot distinguish con
 * 'se (tasai/petasai)
 * sgen (does gen/oes gen)
 
-As the component only works on a single token basis, it is not possible to use the wider context of the wordform to apropriately normalise it.
+As the component only works on a single token basis, it is not possible to use the wider context of the wordform to appropriately normalise it.
 
-The best solution for ambiguous wordforms would be to annotate enough spoken texts that contain them, and then train a model that can distinguish between them, or tag them differently to aid disambiguation.
-
-Nevertheless, this is an important step towards that.
+The most appropriate solution for dealing with ambiguous wordforms would be to annotate enough texts containing those forms, and then train a model that can distinguish between them, or tag them differently to aid disambiguation. This is an important step towards that goal.
 
 ### What should be normalised and what form should the norm take?
 We need further research to better understand what type of normalisation is appropriate for the Welsh language, and whether it is appropriate to include several different types of normalisation within the same component.
@@ -170,11 +179,9 @@ Here are some examples of different types of normalisation:
 
 At present, the component contains a mixture of the above, but this may not coincide with all anticipated uses.
 
-### The creativity of the Welsh is limitless
-
-It is not possible to predict all possible verbal forms, so this component must be used appropriately and carefully, adding to it as necessary.
+### There is great variety of different colloquial forms
+It is not possible to predict all possible colloquial forms, so this component must be used appropriately and carefully, and should be added to as necessary.
 
 ## Conclusions
-
-This is an initial component, and we hope that its release will open a broader discussion on the use and expectations of normalisation components to inform future development.
+This is an initial fersion of this component. We hope that its release will open a broader discussion on the use and expectations of normalisation components to inform future development.
 
