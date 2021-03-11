@@ -72,7 +72,7 @@ Y datrysiad gorau ar gyfer geirffurfiau amwys fyddai anodi digon o destunau llaf
 Serch hynny, mae hyn yn gam pwysig tuag at hynny. 
 
 ### Beth ddylid ei normaleiddio a pa ffurf ddylai fod ar y norm?
-Mae angen rhagor o ymchwil arnom i ddeall yn well pa fath o normaleiddio sy'n briodol ar gyfer y Gymraeg, ac a yw hi'n briodol cynnwys sawl math gwahanol o normaleiddio o fewn y run gydran.
+Mae angen rhagor o ymchwil arnom i ddeall yn well pa fath o normaleiddio sy'n briodol ar gyfer y Gymraeg, ac a yw hi'n briodol cynnwys sawl math gwahanol o normaleiddio o fewn yr un gydran.
 
 Dyma rai enghreifftiau o fathau gwahnol o normaleiddio:
 
