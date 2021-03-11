@@ -19,7 +19,7 @@ Dyma rai brawddegau amrywiol sy'n enghreifftio'r gydran ar waith:
   *poeni efallai bod rhywbeth arall wyt ti, felly?*
 
 * ydi 'cos ma' hi am raddio 'leni  
-  *ydi achos ma' hi am raddio eleni*
+  *ydy achos ma' hi am raddio eleni*
 
 * o's 'ishe gadael 'biti deg, 'falle?
   *oes eisiau gadael ambeutu deg, efallai?*
@@ -92,7 +92,7 @@ Cydran gychwynnol yw hon, ac fe obeithiwn y bydd ei rhyddhau yn agor trafodaeth 
 # Normalisation Component
 This is an experimental normalisation component for the normalisation of Welsh-language texts.
 
-The normalisation compenent is based on spaCy, and the software and the Welsh language package will need to be installed for it to work.
+The normalisation compenent is based on spaCy, and the software and the Welsh language package will both need to be installed for it to work.
 
 The component works by using spaCy tokenisation exceptions to provide a 'norm', or one consistent form, in situations where different forms are adopted, for example by changing each 'ydi' to 'ydy' so that spelling is consitant in the text for that word.
 
@@ -106,7 +106,7 @@ Here are some miscellaneous sentences that exemplify the component in action:
   *poeni efallai bod rhywbeth arall wyt ti, felly?*
 
 * ydi 'cos ma' hi am raddio 'leni  
-  *ydi achos ma' hi am raddio eleni*
+  *ydy achos ma' hi am raddio eleni*
 
 * o's 'ishe gadael 'biti deg, 'falle?
   *oes eisiau gadael ambeutu deg, efallai?*
