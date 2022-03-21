@@ -1,0 +1,31 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Cydran Normaleiddio/Normalisation Component
+message: >-
+  If you use this dataset, please cite it using the
+  metadata from this file.
+type: dataset
+authors:
+  - given-names: Gruffudd
+    family-names: Prys
+    email: g.prys@bangor.ac.uk
+    affiliation: Bangor University Language Technologies Unit
+    orcid: 'https://orcid.org/0000-0002-2910-2460'
+  - given-names: Gareth Llewellyn
+    orcid: 'https://orcid.org/0000-0001-8929-0718'
+    family-names: Watkins
+    email: g.watkins@bangor.ac.uk
+    affiliation: Bangor University Language Technologies Unit
+notes: "Gareth Watkins - Cyfraniad ieithyddol/Linguistic contribution, Gruffudd Prys - Cyfraniad ieithyddol a thechnegol/Linguistic and technical contribution"
+url: 'https://github.com/techiaith/cydran-normaleiddio'
+abstract: >-
+  Cydran arbrofol ar sail spaCy ar gyfer normaleiddio testunau Cymraeg | An experimental normalisation component, based   on spaCy, for the normalisation of Welsh-language texts
+keywords:
+  - Welsh
+  - Normalisation
+  - CC0
+license: MIT
+version: '21.03'
+date-released: '2021-03-11'
